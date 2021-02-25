@@ -6,6 +6,7 @@ user configuration files. _2021 Update: some more OS's join AIX & OpenVMS in suc
 
 ### Changes for 2021 ###
 
+* vim is replaced with neovim
 * I've ditched bash, i'm now a zsh kinda guy:
   * I prefer the completion facilities
   * I really like the glob extensions, i can replace find so no more tripping over differences between GNU find and BSD find
