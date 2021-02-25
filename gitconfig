@@ -1,0 +1,12 @@
+[user]
+    name = Craig J Perry
+    email = craigp84@gmail.com
+[core]
+    editor = nvim
+[alias]
+    st = status
+    ca = commit -a
+    lg = log --graph --oneline
+[color]
+    ui = auto
+
