@@ -1,0 +1,76 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+ 
+# TODO: this should probably live in zshenv
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+source ~/.cargo/env
+ 
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+ 
+setopt autocd notify
+bindkey -v
+bindkey "^R" history-incremental-search-backward
+ 
+zstyle :compinstall filename '$HOME/.zshrc'
+autoload -Uz compinit
+compinit
+ 
+source ~/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme
+ 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+ 
+alias cdc='cd ~/Code'
+alias cdl='cd ~/Code/local/craig'
+alias cdr='cd ~/Code/github.com/craigjperry2'
+ 
+alias tmr='tmux new-session -ADs main'
+ 
+alias vi=nvim
+alias vim=nvim
+export EDITOR=nvim
+ 
+# nnn file manager
+export NNN_BMS="l:/home/craig/Code/laptop.local/craig"
+export NNN_OPENER="/home/craig/.config/nnn/plugins/nuke"
+export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
+alias N="sudo -E nnn -dH"
+ 
+n ()
+{
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+ 
+    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+ 
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+ 
+    nnn -c "$@"
+ 
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+ 
