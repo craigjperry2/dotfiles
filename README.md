@@ -4,6 +4,19 @@ My cross platform (Linux, MacOS, ~~Solaris~~, Windows, ~~FreeBSD~~, ~~OpenBSD~~)
 user configuration files. _2021 Update: some more OS's join AIX & OpenVMS in succumbing to inevitable attrition_
 
 
+### Changes for 2021 ###
+
+* I've ditched bash, i'm now a zsh kinda guy:
+  * I prefer the completion facilities
+  * I really like the glob extensions, i can replace find so no more tripping over differences between GNU find and BSD find
+  * The zmv, zcalc stuff i'm undecided on whether it's useful
+  * The zftp and the zsh modules stuff i will not use - that's taking shell too far IMO, i'd rather use a more ergonomic language like Python for more advanced scripting
+  * The more ergonomic parameter expansion could be handy
+  * The above is all lies to justify rocking a bling eye-candy powerline10k prompt
+* screen is gone, tmux won
+* I'm more assertive about using vim keybindings everywhere so i don't need to learn new keybindings for every tool
+
+
 ### Philosophy ###
 
 1. Document everything, use long-hand options where possible. I want
