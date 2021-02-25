@@ -93,3 +93,25 @@ setup tasks.
 
 You could copy the files instead, but you'll have to do any other setup manually.
 
+
+### Tools ###
+
+* Shell: zsh
+* Editor: neovim, VSCode (with VSCodeVim for now but considering the neovim plugin, i miss my :g command)
+* File Manager: nnn
+* Terminal Multiplexer: tmux
+* Keyboard Macros
+  * Windows: AHK
+  * MacOS: Karabiner Elements + MacOS Keyboard Text shortcuts (which i discovered iCloud sync to iOS, natch!!)
+* Misc CLI Handy Tools
+  * GNU units: the ultimate conversion calculation tool
+  * JSON
+    * jq: I still use this as if its only feature were python -m json.tool, i should invest some time
+    * gron: Make json grep-able
+  * pipx: Don't manually manage virtualenvs for python tools
+    * datasette: sqlite+web tool for data analysis
+    * poetry: Python dependency management automation
+    * httpie: Convenience for working with APIs
+    * ansible: i still occasionally have nightmares about CFEngine3, the GitOps ideas are bringing iterative convergence back and i'm *shook*
+  * lnav: logfile navigator, you don't regexp your way to the next minute/hour/error/whatever in a log, it has keybindings and teleports you instantly. The real killer feature is annotating logs with comments. Why did it take me so long to find this tool...
+
