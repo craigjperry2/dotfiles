@@ -98,7 +98,7 @@ You could copy the files instead, but you'll have to do any other setup manually
 
 * Shell: zsh
 * Editor: neovim, VSCode (with VSCodeVim for now but considering the neovim plugin, i miss my :g command)
-* File Manager: nnn
+* File Manager: nnn _i recompile this with O_NERD=1_
 * Terminal Multiplexer: tmux
 * Keyboard Macros
   * Windows: AHK
