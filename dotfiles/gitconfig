@@ -16,8 +16,8 @@
     d = diff --ignore-all-space --color-words
     ds = diff --staged --ignore-all-space --color-words
     fix = commit --amend -C HEAD
-    l = log --topo-order --first-parent --pretty=format:"%C(auto) %h %ad %an %d %s" --date=short
-    la = log --all --topo-order --first-parent --pretty=format:"%C(auto) %h %ad %an %d %s" --date=short
+    l = log --topo-order --first-parent --pretty=format:'%C(auto) %h %ad %an %d %s' --date=short
+    la = log --all --topo-order --first-parent --pretty=format:'%C(auto) %h %ad %an %d %s' --date=short
     lg = log --all --oneline --graph --decorate
     r = rebase --interactive master
     s = status --short --branch
