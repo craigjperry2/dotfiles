@@ -41,6 +41,8 @@ alias cdr='cd ~/Code/github.com/craigjperry2'
  
 alias tmr='tmux new-session -ADs main'
  
+alias g=git
+
 alias vi=nvim
 alias vim=nvim
 export EDITOR=nvim
