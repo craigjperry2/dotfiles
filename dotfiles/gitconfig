@@ -9,7 +9,7 @@
 [alias]
     ab = rebase --abort
     b = branch
-    cam = commit --all -m
+    ca = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
     cb = checkout -b
     ci = commit
     co = checkout
@@ -23,3 +23,4 @@
     s = status --short --branch
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
     ltop = !git ls-files | xargs -n1 git blame --line-porcelain HEAD | grep '^author ' | sort | uniq -c | sort -nr
+
