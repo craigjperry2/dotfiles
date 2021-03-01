@@ -6,25 +6,34 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
  
 # TODO: this should probably live in zshenv
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
 source ~/.cargo/env
  
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=10000
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
  
 setopt autocd notify
 bindkey -v
 bindkey "^R" history-incremental-search-backward
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+alias ibrewup="ibrew update; ibrew upgrade; ibrew cleanup; ibrew doctor"
+alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
+FPATH=$(brew --prefix)/share/zsh/site-functions:$(ibrew --prefix)/share/zsh/site-functions:$FPATH
  
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -48,9 +57,10 @@ alias vim=nvim
 export EDITOR=nvim
  
 # nnn file manager
-export NNN_BMS="l:/home/craig/Code/laptop.local/craig"
-export NNN_OPENER="/home/craig/.config/nnn/plugins/nuke"
-export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
+export NNN_BMS="l:$HOME/Code/local/craig;r:$HOME/Code/github.com"
+export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
+export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
+# export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
 alias N="sudo -E nnn -dH"
  
 n ()
@@ -75,4 +85,12 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
- 
+
+sudo() {
+    unset -f sudo
+    if [[ "$(uname)" == 'Darwin' ]] && ! grep --silent 'pam_tid.so' /etc/pam.d/sudo ; then
+      sudo sed -i.orig '1s/^/auth       sufficient     pam_tid.so\n/' /etc/pam.d/sudo
+    fi
+    sudo "$@"
+} 
+
