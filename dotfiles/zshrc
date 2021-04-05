@@ -1,3 +1,8 @@
+################################################################################
+# PLATFORM AGNOSTIC CONFIG INIT
+################################################################################
+# vi:sw=2:ts=2:et
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,10 +10,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
  
+
+# Basic Common Paths Setup #####################################################
+
 # TODO: this should probably live in zshenv
 export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
-source ~/.cargo/env
+
+if [[ -e $HOME/.cargo/env ]]; then
+  source $HOME/.cargo/env
+fi
  
+
+# History ######################################################################
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=10000
@@ -23,50 +37,23 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
  
+
+# Shell Behaviours #############################################################
 setopt autocd notify
 bindkey -v
-bindkey "^R" history-incremental-search-backward
+bindkey ^R history-incremental-search-backward
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias ibrewup="ibrew update; ibrew upgrade; ibrew cleanup; ibrew doctor"
-alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
-FPATH=$(brew --prefix)/share/zsh/site-functions:$(ibrew --prefix)/share/zsh/site-functions:$FPATH
- 
-zstyle :compinstall filename '$HOME/.zshrc'
-autoload -Uz compinit
-compinit
- 
-source ~/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme
- 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
- 
-alias cdc='cd ~/Code'
-alias cdl='cd ~/Code/local/craig'
-alias cdr='cd ~/Code/github.com/craigjperry2'
- 
-alias tmr='tmux new-session -ADs main'
- 
-alias g=git
-
-alias vi=nvim
-alias vim=nvim
-export EDITOR=nvim
- 
-# nnn file manager
+# nnn File Manager #############################################################
 export NNN_BMS="l:$HOME/Code/local/craig;r:$HOME/Code/github.com"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
-export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
-# export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
-alias N="sudo -E nnn -dH"
+export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
+alias N=sudo -E nnn -dH
  
 n ()
 {
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
+        echo 'nnn is already running'
         return
     fi
  
@@ -86,11 +73,70 @@ n ()
     fi
 }
 
-sudo() {
-    unset -f sudo
-    if [[ "$(uname)" == 'Darwin' ]] && ! grep --silent 'pam_tid.so' /etc/pam.d/sudo ; then
-      sudo sed -i.orig '1s/^/auth       sufficient     pam_tid.so\n/' /etc/pam.d/sudo
-    fi
-    sudo "$@"
-} 
+
+################################################################################
+# MACOS SPECIFIC CONFIG
+################################################################################
+
+if [[ $OSTYPE == darwin* ]]; then
+
+  # Apple watch & fingerprint sudo auth
+  sudo() {
+      unset -f sudo
+      if ! grep --silent 'pam_tid.so' /etc/pam.d/sudo ; then
+        sudo sed -i.orig '1s/^/auth       sufficient     pam_tid.so\n/' /etc/pam.d/sudo
+      fi
+      sudo "$@"
+  } 
+
+  # Compilation flags
+  # export ARCHFLAGS='arch x86_64'
+
+  # Homebrew package manager for Intel and M1
+  alias ibrew="arch -x86_64 /usr/local/bin/brew"
+  alias ibrewup="ibrew update; ibrew upgrade; ibrew cleanup; ibrew doctor"
+  alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$(ibrew --prefix)/share/zsh/site-functions:$FPATH
+
+  # MacOS uses 'open' rather than 'xdg_open'
+  export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
+
+  alias q="QHOME=~/q rlwrap -r ~/q/m64/q"
+
+fi 
+
+################################################################################
+# END MACOS CONFIG
+################################################################################
+
+
+################################################################################
+# PLATFORM AGNOSTIC CONFIG FINISHING TOUCHES
+################################################################################
+
+zstyle :compinstall filename $HOME/.zshrc
+autoload -Uz compinit
+compinit
+ 
+source "$HOME/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme"
+ 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias c="clear"
+alias ll="ls -lrt"
+alias tmr="tmux new-session -ADs main"
+
+alias g="git"
+
+alias vi="nvim"
+alias vim="nvim"
+export EDITOR="nvim"
+
+alias cdc="cd ~/Code"
+alias cdl="cd ~/Code/local"
+alias cdr="cd ~/Code/github.com/craigjperry2"
+
+alias ec="$EDITOR $HOME/.zshrc"
+alias sc="source $HOME/.zshrc"
 
