@@ -32,7 +32,7 @@ nnoremap <silent> <leader>bp :bp<CR>
  
 " Shortcut to edit this config
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
-nnoremap <silent> <leader>rc :source $MYVIMRC<CR>
+nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
  
 nnoremap <silent> <leader>/ :nohl<CR><C-L>
  
