@@ -43,9 +43,11 @@ setopt autocd notify
 bindkey -v
 bindkey ^R history-incremental-search-backward
 
+# Setup fzf integration
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # nnn File Manager #############################################################
-export NNN_BMS="l:$HOME/Code/local;r:$HOME/Code/github.com"
+export NNN_BMS="l:$HOME/Code/local;r:$HOME/Code/github.com;d:$HOME/Code/github.com/craigjperry2/dotfiles/dotfiles"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
 export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
 alias N=sudo -E nnn -dH
@@ -103,8 +105,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
   alias q="QHOME=~/q rlwrap -r ~/q/m64/q"
 
-  # Setup fzf integration
-  export FZF_DEFAULT_COMMAND='fd --type f'
+  # Finalise fzf integration
   if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
     export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
   fi
@@ -115,6 +116,23 @@ fi
 
 ################################################################################
 # END MACOS CONFIG
+################################################################################
+
+
+################################################################################
+# LINUX SPECIFIC CONFIG
+################################################################################
+
+if [[ $OSTYPE == linux* ]]; then
+
+  # Finalise fzf integration
+  [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
+  source "/usr/share/fzf/shell/key-bindings.zsh"
+
+fi
+
+################################################################################
+# END LINUX CONFIG
 ################################################################################
 
 
