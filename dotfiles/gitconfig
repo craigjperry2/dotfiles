@@ -26,3 +26,5 @@
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
     ltop = !git ls-files | xargs -n1 git blame --line-porcelain HEAD | grep '^author ' | sort | uniq -c | sort -nr
 
+[pull]
+	ff = only
