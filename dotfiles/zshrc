@@ -19,7 +19,10 @@ export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
 if [[ -e $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
- 
+
+if [[ -d $HOME/go/bin ]]; then
+  export PATH=$HOME/go/bin:$PATH
+fi
 
 # History ######################################################################
 
@@ -128,6 +131,9 @@ if [[ $OSTYPE == linux* ]]; then
   # Finalise fzf integration
   [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
   source "/usr/share/fzf/shell/key-bindings.zsh"
+
+  # Workaround F33 having go 1.15 instead of 1.16
+  export PATH=$PATH:/usr/local/go/bin
 
 fi
 
