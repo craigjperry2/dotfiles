@@ -52,7 +52,7 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # nnn File Manager #############################################################
 export NNN_BMS="l:$HOME/Code/local;r:$HOME/Code/github.com;d:$HOME/Code/github.com/craigjperry2/dotfiles/dotfiles"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
-export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
+export NNN_PLUG='d:-_git diff;l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
 alias N=sudo -E nnn -dH
  
 n ()
