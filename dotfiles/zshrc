@@ -146,6 +146,7 @@ fi
 # PLATFORM AGNOSTIC CONFIG FINISHING TOUCHES
 ################################################################################
 
+zstyle ':completion:*' rehash true
 zstyle :compinstall filename $HOME/.zshrc
 autoload -Uz compinit
 compinit
