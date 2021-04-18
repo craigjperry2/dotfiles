@@ -172,6 +172,8 @@ alias gl='g l'
 alias gp='g p'
 alias gpl='g pl'
 alias gs='g s'
+alias gsw='g sw'
+alias gw='g w'
 
 alias vi="nvim"
 alias vim="nvim"

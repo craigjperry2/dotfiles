@@ -28,6 +28,8 @@
     rw = reset HEAD~1
     s = status --short --branch
     set = !git branch --set-upstream-to=origin/$( git symbolic-ref --short HEAD )
+    sw = show
+    w = whatchanged
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
     ltop = !git ls-files | xargs -n1 git blame --line-porcelain HEAD | grep '^author ' | sort | uniq -c | sort -nr
 [pull]
