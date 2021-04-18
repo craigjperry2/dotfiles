@@ -161,6 +161,17 @@ alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
 
 alias g="git"
+alias gb='g b'
+alias gca='g ca'
+alias gcb='g cb'
+alias gcm='g cm'
+alias gco='g co'
+alias gd='g d'
+alias gds='g ds'
+alias gl='g l'
+alias gp='g p'
+alias gpl='g pl'
+alias gs='g s'
 
 alias vi="nvim"
 alias vim="nvim"
