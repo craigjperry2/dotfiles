@@ -12,6 +12,8 @@
     ca = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
     cb = checkout -b
     ci = commit
+    cm = checkout main
+    cs = checkout master
     co = checkout
     d = diff --ignore-all-space --color-words
     ds = diff --staged --ignore-all-space --color-words
@@ -21,7 +23,9 @@
     lg = log --all --oneline --graph --decorate
     p = push -u
     pl = pull
-    r = rebase --interactive master
+    r = rebase --interactive main
+    rm = rebase --interactive master
+    rw = reset HEAD~1
     s = status --short --branch
     set = !git branch --set-upstream-to=origin/$( git symbolic-ref --short HEAD )
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
