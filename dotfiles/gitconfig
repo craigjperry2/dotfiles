@@ -21,7 +21,7 @@
     l = log --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = log --all --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lg = log --all --oneline --graph --decorate
-    p = push -u
+    p = push
     pl = pull
     r = rebase --interactive main
     rm = rebase --interactive master
