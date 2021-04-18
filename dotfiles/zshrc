@@ -47,18 +47,18 @@ bindkey -v
 bindkey ^R history-incremental-search-backward
 
 # Setup fzf integration
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 # nnn File Manager #############################################################
 export NNN_BMS="l:$HOME/Code/local;r:$HOME/Code/github.com;d:$HOME/Code/github.com/craigjperry2/dotfiles/dotfiles"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
 export NNN_PLUG='d:-_git diff;l:_git log*;m:-_less -iR $nnn*;f:_|xdg_open $nnn'
-alias N=sudo -E nnn -dH
+alias N="sudo -E nnn -dH"
  
 n ()
 {
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo 'nnn is already running'
+        echo "nnn is already running"
         return
     fi
  
@@ -88,14 +88,14 @@ if [[ $OSTYPE == darwin* ]]; then
   # Apple watch & fingerprint sudo auth
   sudo() {
       unset -f sudo
-      if ! grep --silent 'pam_tid.so' /etc/pam.d/sudo ; then
-        sudo sed -i.orig '1s/^/auth       sufficient     pam_tid.so\n/' /etc/pam.d/sudo
+      if ! grep --silent "pam_tid.so" /etc/pam.d/sudo ; then
+        sudo sed -i.orig "1s/^/auth       sufficient     pam_tid.so\n/" /etc/pam.d/sudo
       fi
       sudo "$@"
   } 
 
   # Compilation flags
-  # export ARCHFLAGS='arch x86_64'
+  # export ARCHFLAGS="arch x86_64"
 
   # Homebrew package manager for Intel and M1
   alias ibrew="arch -x86_64 /usr/local/bin/brew"
@@ -146,7 +146,7 @@ fi
 # PLATFORM AGNOSTIC CONFIG FINISHING TOUCHES
 ################################################################################
 
-zstyle ':completion:*' rehash true
+zstyle ":completion:*" rehash true
 zstyle :compinstall filename $HOME/.zshrc
 autoload -Uz compinit
 compinit
@@ -161,19 +161,19 @@ alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
 
 alias g="git"
-alias gb='g b'
-alias gca='g ca'
-alias gcb='g cb'
-alias gcm='g cm'
-alias gco='g co'
-alias gd='g d'
-alias gds='g ds'
-alias gl='g l'
-alias gp='g p'
-alias gpl='g pl'
-alias gs='g s'
-alias gsw='g sw'
-alias gw='g w'
+alias gb="g b"
+alias gca="g ca"
+alias gcb="g cb"
+alias gcm="g cm"
+alias gco="g co"
+alias gd="g d"
+alias gds="g ds"
+alias gl="g l"
+alias gp="g p"
+alias gpl="g pl"
+alias gs="g s"
+alias gsw="g sw"
+alias gw="g w"
 
 alias vi="nvim"
 alias vim="nvim"
