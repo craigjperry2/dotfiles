@@ -19,12 +19,13 @@
     l = log --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = log --all --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lg = log --all --oneline --graph --decorate
-    p = push
+    p = push -u
+    pl = pull
     r = rebase --interactive master
     s = status --short --branch
     set = !git branch --set-upstream-to=origin/$( git symbolic-ref --short HEAD )
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
     ltop = !git ls-files | xargs -n1 git blame --line-porcelain HEAD | grep '^author ' | sort | uniq -c | sort -nr
-
 [pull]
 	ff = only
+
