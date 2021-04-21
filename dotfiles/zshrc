@@ -128,12 +128,22 @@ fi
 
 if [[ $OSTYPE == linux* ]]; then
 
-  # Finalise fzf integration
-  [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
-  source "/usr/share/fzf/shell/key-bindings.zsh"
+  if [[ $WSL_DISTRO_NAME == Ubuntu* ]]; then
 
-  # Workaround F33 having go 1.15 instead of 1.16
-  export PATH=$PATH:/usr/local/go/bin
+    # Finalise fzf integration - Ubuntu WSL2
+    [[ $- == *i* ]] && source /usr/share/doc/fzf/examples/completion.zsh 2> /dev/null
+    source "/usr/share/doc/fzf/examples/key-bindings.zsh"
+
+  else
+
+    # Finalise fzf integration - Fedora Laptop
+    [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
+    source "/usr/share/fzf/shell/key-bindings.zsh"
+
+    # Workaround F33 having go 1.15 instead of 1.16
+    export PATH=$PATH:/usr/local/go/bin
+
+  fi
 
 fi
 
