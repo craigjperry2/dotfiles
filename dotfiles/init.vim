@@ -10,6 +10,9 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
  
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#action = {
+      \ '<c-x>': 'split',
+      \ '<c-v>': 'vsplit' }
  
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_smartcase = 1
