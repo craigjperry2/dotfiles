@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'mcchrish/nnn.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
  
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
@@ -41,12 +43,18 @@ inoremap jk <Esc>
 " Map Y like D, C etc. behave (to end of line)
 nnoremap Y  y$
 
-" Control-x to write-quit-all
-nnoremap <C-x> :wqa!<CR>
-inoremap <C-x> <C-o>:wqa!<CR>
-vnoremap <C-x> <C-c>:wqa!<CR>
-
 " Toggle paste mode
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+" fzf.vim common tasks
+nnoremap <leader>fr :Rg 
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fg :GFiles<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fh :History:<CR>
+nnoremap <leader>f/ :History/<CR>
 
