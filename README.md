@@ -1,6 +1,6 @@
 _Previous version archived at https://github.com/CraigJPerry/dotfiles (I lost access to CraigJPerry a good while ago)_
 
-My cross platform (Linux, MacOS, ~~Solaris~~, Windows, ~~FreeBSD~~, ~~OpenBSD~~)
+My cross platform (Linux, MacOS, ~~Solaris~~, Windows, FreeBSD, ~~OpenBSD~~)
 user configuration files. _2021 Update: some more OS's join AIX & OpenVMS in succumbing to inevitable attrition_
 
 
