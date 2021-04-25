@@ -132,6 +132,8 @@ if [[ $OSTYPE == freebsd* ]]; then
   [[ $- == *i* ]] && source /usr/local/share/examples/fzf/shell/completion.zsh 2> /dev/null
   source "/usr/local/share/examples/fzf/shell/key-bindings.zsh"
 
+  alias pg='ps -acdO user | fzf'
+
 fi
 
 ################################################################################
