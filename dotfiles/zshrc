@@ -134,6 +134,7 @@ if [[ $OSTYPE == freebsd* ]]; then
   source "/usr/local/share/examples/fzf/shell/key-bindings.zsh"
 
   alias pg='ps -acdO user | fzf'
+  alias cat='bat'
 
 fi
 
