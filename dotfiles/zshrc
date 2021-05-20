@@ -134,7 +134,6 @@ if [[ $OSTYPE == freebsd* ]]; then
   source "/usr/local/share/examples/fzf/shell/key-bindings.zsh"
 
   alias pg='ps -acdO user | fzf'
-  alias cat='bat'
 
 fi
 
@@ -190,6 +189,8 @@ source "$HOME/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme"
 alias c="clear"
 alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
+
+alias cat='bat'
 
 alias g="git"
 alias gb="g b"
