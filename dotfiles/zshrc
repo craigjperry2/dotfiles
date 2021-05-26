@@ -160,9 +160,6 @@ if [[ $OSTYPE == linux* ]]; then
     [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
     source "/usr/share/fzf/shell/key-bindings.zsh"
 
-    # Workaround F33 having go 1.15 instead of 1.16
-    export PATH=$PATH:/usr/local/go/bin
-
   fi
 
 fi
@@ -206,6 +203,14 @@ alias gpl="g pl"
 alias gs="g s"
 alias gsw="g sw"
 alias gw="g w"
+
+# Git clone https://host.com/user/repo.git (or ssh://git@...) into ~/Code/user/repo
+gc() {
+  repo=$1
+  dest=$( echo $repo | sed -n 's#\(git@\|https\?://\)\(.*\).git#\2#p' )
+  git clone $repo ~/Code/${dest}
+  cd ~/Code/${dest}
+}
 
 alias vi="nvim"
 alias vim="nvim"
