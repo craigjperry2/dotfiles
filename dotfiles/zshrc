@@ -207,7 +207,7 @@ alias gw="g w"
 # Git clone https://host.com/user/repo.git (or ssh://git@...) into ~/Code/user/repo
 gc() {
   repo=$1
-  dest=$( echo $repo | sed -n 's#\(git@\|https\?://\)\(.*\).git#\2#p' )
+  dest=$( echo $repo | sed -En 's#(.*@|https?://)(www\.)?([^:]*)(:|/)(.*).git#\3/\5#p' )
   git clone $repo ~/Code/${dest}
   cd ~/Code/${dest}
 }
