@@ -24,6 +24,11 @@ if [[ -d $HOME/go/bin ]]; then
   export PATH=$HOME/go/bin:$PATH
 fi
 
+if [[ -d $HOME/.dotnet/tools ]]; then
+  export PATH=$HOME/.dotnet/tools:$PATH
+fi
+
+
 # History ######################################################################
 
 HISTFILE=~/.histfile
@@ -115,9 +120,6 @@ if [[ $OSTYPE == darwin* ]]; then
   fi
   [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
   source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-
-  # dotnet
-  export PATH="$PATH:/Users/craig/.dotnet/tools"
 
 fi 
 
@@ -222,6 +224,7 @@ export EDITOR="nvim"
 alias cdc="cd ~/Code"
 alias cdl="cd ~/Code/local"
 alias cdr="cd ~/Code/github.com/craigjperry2"
+alias cdd="cd ~/Code/github.com/craigjperry2/dotfiles/dotfiles"
 
 alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
