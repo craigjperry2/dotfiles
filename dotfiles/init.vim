@@ -52,12 +52,12 @@ nnoremap <leader>z/ :History/<CR>
 
 " lualine plugin **********************************************************
 
-lua require('lualine').setup({options={theme='solarized_dark'}})
+lua require('lualine').setup({options={theme='solarized_light'}})
 
 
 " theme **********************************************************
 
-set background=dark
+set background=light
 colorscheme solarized
 
 
