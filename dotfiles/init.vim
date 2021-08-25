@@ -73,7 +73,8 @@ autocmd BufReadPost *
 syntax on
 set number
 set nohlsearch
-filetype plugin indent on
+filetype plugin on
+filetype indent off
  
 " Splits, used with C-w H/K to rearrange them
 set splitright
