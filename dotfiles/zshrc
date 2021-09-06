@@ -105,7 +105,9 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Homebrew package manager for Intel and M1
   alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  alias ibrew="arch -x86_64 /usr/local/bin/brew"
+  alias ibrewup="ibrew update; ibrew upgrade; ibrew cleanup; ibrew doctor"
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$(ibrew --prefix)/share/zsh/site-functions:$FPATH
 
   # MacOS uses 'open' rather than 'xdg_open'
   export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
@@ -227,4 +229,6 @@ alias cdd="cd ~/Code/github.com/craigjperry2/dotfiles/dotfiles"
 
 alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
+
+alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
 
