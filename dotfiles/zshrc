@@ -153,6 +153,8 @@ fi
 
 if [[ $OSTYPE == linux* ]]; then
 
+  alias q="QHOME=~/q rlwrap -r ~/q/l64/q"
+
   if [[ $WSL_DISTRO_NAME == Ubuntu* ]]; then
 
     # Finalise fzf integration - Ubuntu WSL2
