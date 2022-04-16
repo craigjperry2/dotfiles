@@ -74,7 +74,10 @@ syntax on
 set number
 set nohlsearch
 filetype plugin on
-filetype indent off
+filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
  
 " Splits, used with C-w H/K to rearrange them
 set splitright
