@@ -7,33 +7,28 @@
 [color]
     ui = auto
 [alias]
-    ab = rebase --abort
-    b = branch
-    ca = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
-    cb = checkout -b
-    ci = commit
-    cm = checkout main
-    cs = checkout master
-    co = checkout
+    # TAB select which files to git add
+    a = "!git status --short | fzf -m | awk '{print $2}' | xargs git add"
+    ac = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
+    cm = commit --message
     d = diff --ignore-all-space --color-words
     ds = diff --staged --ignore-all-space --color-words
-    fix = commit --amend -C HEAD
     l = log --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = log --all --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lg = log --all --oneline --graph --decorate
-    p = push
-    pl = pull
-    r = rebase --interactive main
-    rm = rebase --interactive master
-    rw = reset HEAD~1
+    ps = "!git push origin $(git symbolic-ref --short HEAD)"
+    pl = "!git pull origin $(git symbolic-ref --short HEAD)"
     s = status --short --branch
-    set = !git branch --set-upstream-to=origin/$( git symbolic-ref --short HEAD )
-    sw = show
     w = whatchanged
     ctop = !git log | grep Author | sort | uniq -c | sort -rn
     ltop = !git ls-files | xargs -n1 git blame --line-porcelain HEAD | grep '^author ' | sort | uniq -c | sort -nr
+    find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | fzf -m | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
+    # edit conflicted file on merge
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    # add conflicted file on merge
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 [pull]
 	ff = only
-
 [init]
 	defaultBranch = main
+

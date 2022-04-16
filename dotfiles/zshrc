@@ -208,24 +208,21 @@ export BAT_THEME="Solarized (light)"
 alias cat='bat'
 
 alias g="git"
-alias gb="g b"
-alias gca="g ca"
-alias gcb="g cb"
+alias ga="g a"
+alias gac="g ac"
 alias gcm="g cm"
-alias gco="g co"
 alias gd="g d"
 alias gds="g ds"
 alias gl="g l"
-alias gp="g p"
+alias gps="g ps"
 alias gpl="g pl"
 alias gs="g s"
-alias gsw="g sw"
 alias gw="g w"
 
 # Git clone https://host.com/user/repo.git (or ssh://git@...) into ~/Code/user/repo
 gc() {
   repo=$1
-  dest=$( echo $repo | sed -En 's#(.*@|https?://)(www\.)?([^:]*)(:|/)(.*).git#\3/\5#p' )
+  dest=$( echo $repo | sed -En 's#(.*@|https?://)(www\.)?([^:]*)(:|/)(.*)(.git)?#\3/\5#p' )
   git clone $repo ~/Code/${dest}
   cd ~/Code/${dest}
 }
