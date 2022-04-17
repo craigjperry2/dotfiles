@@ -168,6 +168,10 @@ nnoremap dw vb"_d
 " Select all
 nmap <C-a> gg<S-v>G
 
+" Since C-a is mapped, move incr (& decr)
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 " Save with root permission
 command! W w !sudo tee > /dev/null %" Move lines up or down
 
@@ -188,4 +192,4 @@ colorscheme solarized
 "}}}
 
 " za|zR|zM - toggle|open all|close all folds
-" vim: set foldmethod=marker foldlevel=0:
+" vim: set foldmethod=marker foldlevel=20:
