@@ -55,6 +55,13 @@ export KEYTIMEOUT=1  # Switch to normal mode after only 10ms wait
 # Setup fzf integration
 export FZF_DEFAULT_COMMAND="fd --type f"
 
+
+# broot File Manager ###########################################################
+if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
+  source $HOME/.config/broot/launcher/bash/br
+fi
+
+
 # nnn File Manager #############################################################
 export NNN_BMS="l:$HOME/Code/local;r:$HOME/Code/github.com;d:$HOME/Code/github.com/craigjperry2/dotfiles/dotfiles"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
