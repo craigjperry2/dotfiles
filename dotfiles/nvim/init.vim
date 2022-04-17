@@ -15,7 +15,7 @@ set nohlsearch
 set showcmd
 " set cmdheight=1
 " set laststatus=2
-set scrolloff=10
+set scrolloff=5
 set expandtab
 
 set inccommand=split
@@ -57,6 +57,13 @@ set cursorline
 
 " File types "{{{
 " ---------------------------------------------------------------------
+" Restore last cursor position on re-opening a file & scroll to middle of screen
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ |   exe "normal! zz"
+  \ | endif
+
 " JavaScript
 au BufNewFile,BufRead *.es6 setf javascript
 " TypeScript
@@ -113,25 +120,19 @@ endif
 " Mappings "{{{
 " ---------------------------------------------------------------------
 
-" Restore last cursor position on re-opening a file & scroll to middle of screen
-autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ |   exe "normal! zz"
-  \ | endif
-
- 
 " Splits, used with C-w H/K to rearrange them
 set splitright
 set splitbelow
 nnoremap <leader>- :new<CR>
 nnoremap <leader>\| :vnew<CR>
+
 " Navigate windows
 map sh <C-w>h
 map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
 map sd <C-w>q
+
 " Resize windows
 nmap <C-S-left> <C-w><
 nmap <C-S-right> <C-w>>
@@ -140,9 +141,9 @@ nmap <C-S-down> <C-w>-
 
 " Buffer management
 nnoremap <leader>bl :ls<CR>:buffer<Space>
+nnoremap <leader>bj :bj<CR>
+nnoremap <leader>bk :bk<CR>
 nnoremap <leader>bd :bd<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
 
 nmap te :tabedit 
 nmap <S-Tab> :tabprev<Return>
