@@ -89,16 +89,92 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
+
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.tailwindcss.setup { 
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.ansiblels.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.awk_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.cssmodules_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.dockerls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.remark_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.sumneko_lua.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
