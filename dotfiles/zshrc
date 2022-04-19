@@ -14,20 +14,29 @@ fi
 # Basic Common Paths Setup #####################################################
 
 # TODO: this should probably live in zshenv
-export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
+PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+
+if [[ -d /opt/homebrew/bin ]]; then
+  PATH=/opt/homebrew/bin:$PATH
+fi
 
 if [[ -e $HOME/.cargo/env ]]; then
   source $HOME/.cargo/env
 fi
 
+if [[ -d /usr/local/go/bin ]]; then
+  PATH=/usr/local/go/bin:$PATH
+fi
+
 if [[ -d $HOME/go/bin ]]; then
-  export PATH=$HOME/go/bin:$PATH
+  PATH=$HOME/go/bin:$PATH
 fi
 
 if [[ -d $HOME/.dotnet/tools ]]; then
-  export PATH=$HOME/.dotnet/tools:$PATH
+  PATH=$HOME/.dotnet/tools:$PATH
 fi
 
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # History ######################################################################
 
