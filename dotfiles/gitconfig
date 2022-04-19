@@ -3,7 +3,15 @@
     email = craigp84@gmail.com
 [core]
     editor = nvim
-    pager = less -r
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [color]
     ui = auto
 [alias]
