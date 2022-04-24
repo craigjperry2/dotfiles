@@ -221,7 +221,7 @@ alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
 
 export BAT_THEME="Solarized (light)"
-alias cat='bat'
+alias cat='bat --pager=never'
 
 alias g="git"
 alias ga="g a"
