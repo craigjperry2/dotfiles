@@ -64,6 +64,9 @@ export KEYTIMEOUT=1  # Switch to normal mode after only 10ms wait
 # Setup fzf integration
 export FZF_DEFAULT_COMMAND="fd --type f"
 
+# Setup further completions
+export FPATH=~/.local/share/zsh/site-functions:$FPATH
+
 
 # broot File Manager ###########################################################
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
