@@ -221,8 +221,15 @@ alias c="clear"
 alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
 
-export BAT_THEME="Solarized (light)"
-alias cat='bat --pager=never'
+if [[ -n $( which bat ) ]]; then
+  export BAT_THEME="Solarized (light)"
+  alias cat='bat --pager=never'
+fi
+
+if [[ -n $( which exa ) ]]; then
+  alias ls="exa --grid --across --icons"
+  alias ll="exa --git -l --colour=always --tree --level=2 --sort time --icons"
+fi
 
 alias g="git"
 alias ga="g a"
