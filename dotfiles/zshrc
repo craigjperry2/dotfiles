@@ -227,8 +227,8 @@ if [[ -n $( which bat ) ]]; then
 fi
 
 if [[ -n $( which exa ) ]]; then
-  alias l="exa --grid --across --icons"
-  alias ll="exa --git -l --colour=always --tree --level=2 --sort time --icons"
+  alias l="exa --grid --across --icons -l --header"
+  alias ll="exa --git -l --colour=always --tree --level=2 --sort time --icons --header"
 fi
 
 alias g="git"
