@@ -1,26 +1,38 @@
 [user]
     name = Craig J Perry
     email = craigp84@gmail.com
+
 [core]
-    editor = nvim
+    editor = code --wait
     pager = delta
+
 [interactive]
     diffFilter = delta --color-only
+
 [delta]
     navigate = true  # use n and N to move between diff sections
+    line-numbers = true
+    side-by-side = true
+    hyperlinks = true
+    syntax-theme = "Solarized (light)"
+
 [merge]
     conflictstyle = diff3
+	tool = vscode
+
 [diff]
-    colorMoved = default
+	tool = vscode
+
 [color]
     ui = auto
+
 [alias]
     # TAB select which files to git add
     a = "!git status --short | fzf -m | awk '{print $2}' | xargs git add"
     ac = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
     cm = commit --message
-    d = diff --ignore-all-space --color-words
-    ds = diff --staged --ignore-all-space --color-words
+    d = diff --ignore-all-space
+    ds = diff --staged --ignore-all-space
     l = log --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     la = log --all --topo-order --first-parent --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lg = log --all --oneline --graph --decorate
@@ -35,8 +47,15 @@
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     # add conflicted file on merge
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-[pull]
-	ff = only
-[init]
-	defaultBranch = main
 
+[pull]
+    ff = only
+
+[init]
+    defaultBranch = main
+
+[difftool "vscode"]
+	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "vscode"]
+    cmd = code --wait \"$MERGED\"
