@@ -30,6 +30,7 @@
     # TAB select which files to git add
     a = "!git status --short | fzf -m | awk '{print $2}' | xargs git add"
     ac = "!f(){ git add --all . ; git commit --all --message=\"$1\"; };f"
+    b = "!git branch -q -a --color=always | sed -e 's/^..//' -e '/->/d' | fzf --ansi --preview-window right:75% --preview 'git log -n $(( $( tput lines ) - 3 )) --color=always --pretty=reference {}' | xargs git switch"
     cm = commit --message
     d = diff --ignore-all-space
     ds = diff --staged --ignore-all-space

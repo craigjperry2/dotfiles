@@ -235,6 +235,7 @@ fi
 alias g="git"
 alias ga="g a"
 alias gac="g ac"
+alias gb="g b"
 alias gcm="g cm"
 alias gd="g d"
 alias gds="g ds"
