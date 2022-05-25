@@ -12,6 +12,8 @@ user configuration files. _2021 Update: some more OS's join AIX & OpenVMS in suc
 * I've really settled into tmux now
 * Emacs has been catching my eye of late, i've been playing with spacemacs since starting with Common Lisp last year. I don't really want to go all-in on emacs though
 * jq is getting more usage now, i've been doing more JSON stuff and sqlite's json facilities are good but jq is easier usually
+* Still experimenting with various rust tools, bat, exa, delta, dust, fd, hyperfine & ripgrep are all solid:
+  * cargo install bandwhich bat broot bottom git-delta deno du-dust exa fd-find gping grex hyperfine procs ripgrep sd tokei xh xsv ytop
 
 ### Changes for 2021 ###
 
