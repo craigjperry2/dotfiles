@@ -3,6 +3,15 @@ _Previous version archived at https://github.com/CraigJPerry/dotfiles (I lost ac
 My cross platform (Linux, MacOS, ~~Solaris~~, Windows, FreeBSD, ~~OpenBSD~~)
 user configuration files. _2021 Update: some more OS's join AIX & OpenVMS in succumbing to inevitable attrition_
 
+### Changes for 2022 ###
+
+* neovim is still my vim of choice but my experiment with neovim + LSP is over, back to VSCode
+* I revisited Intellij (primary IDE 2012-2020) after an 18 month hiatus and i've decided to stay with VSCode for Go, Python & JS/TS
+* VSCode takes on extended responsibilites now as my visual diff & merge tool - i test drove kdiff3, meld & beyond compare before settling on VSCode
+* zsh is still my default shell (was bash 1999-2021) but i'm not sure i exploit it much beyond p10k, the better parameter expansion and marginally better completion vs. bash
+* I've really settled into tmux now
+* Emacs has been catching my eye of late, i've been playing with spacemacs since starting with Common Lisp last year. I don't really want to go all-in on emacs though
+* jq is getting more usage now, i've been doing more JSON stuff and sqlite's json facilities are good but jq is easier usually
 
 ### Changes for 2021 ###
 
