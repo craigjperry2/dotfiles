@@ -189,6 +189,8 @@ if [[ $OSTYPE == linux* ]]; then
     [[ $- == *i* ]] && source /usr/share/doc/fzf/examples/completion.zsh 2> /dev/null
     source "/usr/share/doc/fzf/examples/key-bindings.zsh"
 
+    export PATH="/mnt/c/Program Files/Microsoft VS Code/bin:$PATH"
+
   else
 
     # Finalise fzf integration - Fedora Laptop
@@ -203,17 +205,6 @@ fi
 # END LINUX CONFIG
 ################################################################################
 
-################################################################################
-# WSL2 SPECIFIC CONFIG
-################################################################################
-
-if [[ $( uname -r ) == *WSL2* ]]; then
-  export PATH="/mnt/c/Program Files/Microsoft VS Code/bin:$PATH"
-fi
-
-################################################################################
-# END LINUX CONFIG
-################################################################################
 
 ################################################################################
 # PLATFORM AGNOSTIC CONFIG FINISHING TOUCHES
@@ -277,4 +268,3 @@ alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
 
 alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
-
