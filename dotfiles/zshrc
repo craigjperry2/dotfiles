@@ -193,9 +193,12 @@ if [[ $OSTYPE == linux* ]]; then
 
   else
 
-    # Finalise fzf integration - Fedora Laptop
+    # Finalise fzf integration - Fedora
     [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
     source "/usr/share/fzf/shell/key-bindings.zsh"
+
+    # Docker compose with podman
+    export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
 
   fi
 
