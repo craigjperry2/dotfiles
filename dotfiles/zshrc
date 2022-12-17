@@ -69,9 +69,10 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 export FPATH=~/.local/share/zsh/site-functions:$FPATH
 
 
-# viddy #######################################################################
+# Golang tools #################################################################
 if [ -d ~/go ]; then
   alias watch=viddy
+  alias df=duf
 fi
 
 viddy () {
@@ -80,6 +81,14 @@ viddy () {
   fi
   unset -f viddy
   viddy "$@"
+}
+
+duf () {
+  if [ ! -e ~/go/bin/duf ]; then
+    go install github.com/muesli/duf@latest
+  fi
+  unset -f duf
+  duf "$@"
 }
 
 
