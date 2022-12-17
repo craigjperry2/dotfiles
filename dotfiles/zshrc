@@ -84,7 +84,7 @@ viddy () {
 }
 
 duf () {
-  if [ ! -e ~/go/bin/duf && ! -e /opt/homebrew/bin/duf ]; then
+  if [ ! -e ~/go/bin/duf ] && [ ! -e /opt/homebrew/bin/duf ]; then
     go install github.com/muesli/duf@latest
   fi
   unset -f duf
