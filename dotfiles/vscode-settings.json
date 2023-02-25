@@ -1,111 +1,61 @@
 {
-  "terminal.integrated.fontFamily": "FiraMono Nerd Font",
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.inlineSuggest.enabled": true,
+  "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
-  "python.languageServer": "Pylance",
   "git.autofetch": true,
-  "git.confirmSync": false,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "window.zoomLevel": 0,
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.hlsearch": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
+  "vim.enableNeovim": true,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "after": ["<esc>"]
     }
   ],
   "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-a>": true,
-    "<C-f>": true
-  },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.splitEditor"]
+      "before": ["u"],
+      "commands": ["undo"]
     },
     {
-      "before": ["<leader>", "b"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["revealInExplorer"]
-    },
-    {
-      "before": ["<leader>", "/"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["<leader>", "t"],
-      "commands": ["workbench.action.gotoSymbol"]
-    },
-    {
-      "before": ["<leader>", "p"],
-      "commands": ["workbench.action.showCommands"]
-    },
-    {
-      "before": ["="],
-      "commands": ["editor.action.formatDocument"]
-    },
-    {
-      "before": ["<leader>", "t", "t"],
-      "commands": [":tabnew"]
-    },
-    {
-      "before": ["<leader>", "t", "d"],
-      "commands": [":tabclose"]
-    },
-    {
-      "before": ["<leader>", "t", "n"],
-      "commands": [":tabnext"]
-    },
-    {
-      "before": ["<leader>", "t", "p"],
-      "commands": [":tabprev"]
-    },
-    {
-      "before": ["<leader>", "t", "o"],
-      "commands": [":tabo"]
+      "before": ["<C-r>"],
+      "commands": ["redo"]
     }
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
-    },
-    {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
-  ],
-  "vim.statusBarColorControl": true,
-  "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
-  "vim.statusBarColors.insert": ["#BF616A", "#000"],
-  "vim.statusBarColors.visual": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
-  "vim.statusBarColors.replace": "#D08770",
-  "vim.statusBarColors.commandlineinprogress": "#007ACC",
-  "vim.statusBarColors.searchinprogressmode": "#007ACC",
-  "vim.statusBarColors.easymotionmode": "#007ACC",
-  "vim.statusBarColors.easymotioninputmode": "#007ACC",
-  "vim.statusBarColors.surroundinputmode": "#007ACC",
+  "vim.useSystemClipboard": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.autoDetectColorScheme": true,
+  "window.restoreWindows": "none",
+  "workbench.colorTheme": "Solarized Light",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
-
