@@ -1,0 +1,6 @@
+[
+    {
+        "key": "ctrl+cmd+v",
+        "command": "toggleVim"
+    }
+]
