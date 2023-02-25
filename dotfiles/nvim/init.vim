@@ -84,25 +84,12 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 call plug#begin('~/.vim/plugged')
 Plug 'mcchrish/nnn.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'williamboman/nvim-lsp-installer'
-" Plug 'tami5/lspsaga.nvim'
-" Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
-" Plug 'folke/lsp-colors.nvim'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-" Plug 'windwp/nvim-ts-autotag'
-" Plug 'onsails/lspkind-nvim'
 call plug#end()
 
 if has("unix")
@@ -164,16 +151,6 @@ nnoremap Y  y$
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 nnoremap x "_x
-
-" Delete a word backwards
-nnoremap dw vb"_d
-
-" Select all
-nmap <C-a> gg<S-v>G
-
-" Since C-a is mapped, move incr (& decr)
-nnoremap + <C-a>
-nnoremap - <C-x>
 
 " Save with root permission
 command! W w !sudo tee > /dev/null %" Move lines up or down
