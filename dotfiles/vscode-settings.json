@@ -3,6 +3,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.inlineSuggest.enabled": true,
+  "editor.rulers": [80, 120],
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
