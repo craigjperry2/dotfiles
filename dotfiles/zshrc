@@ -204,9 +204,10 @@ fi
 if [[ $OSTYPE == linux* ]]; then
 
   alias q="QHOME=~/q rlwrap -r ~/q/l64/q"
-  alias uu="sudo apt update && sudo apt upgrade -y"
 
   if [[ $WSL_DISTRO_NAME == Ubuntu* ]]; then
+
+    alias uu="sudo apt update && sudo apt upgrade -y"
 
     # Finalise fzf integration - Ubuntu WSL2
     [[ $- == *i* ]] && source /usr/share/doc/fzf/examples/completion.zsh 2> /dev/null
@@ -215,6 +216,8 @@ if [[ $OSTYPE == linux* ]]; then
     export PATH="/mnt/c/Program Files/Microsoft VS Code/bin:$PATH"
 
   else
+
+    alias uu="sudo dnf upgrade"
 
     # Finalise fzf integration - Fedora
     [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
