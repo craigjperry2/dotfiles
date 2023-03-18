@@ -253,12 +253,14 @@ alias c="clear"
 alias ll="ls -lrt"
 alias tmr="tmux new-session -ADs main"
 
-if [[ -n $( which bat ) ]]; then
+which bat > /dev/null 2>&1 
+if [[ $? -eq 0 ]]; then
   export BAT_THEME="Solarized (light)"
   alias cat='bat --pager=never'
 fi
 
-if [[ -n $( which exa ) ]]; then
+which exa > /dev/null 2>&1 
+if [[ $? -eq 0 ]]; then
   alias l="exa --git --grid --across --icons -l --header"
   alias ll="exa --git -l --colour=always --tree --level=2 --sort time --icons --header"
 fi
@@ -297,3 +299,4 @@ alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
 
 alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
+
