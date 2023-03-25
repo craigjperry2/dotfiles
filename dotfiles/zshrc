@@ -171,6 +171,10 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools
   fi
 
+  # Java OpenJDK
+  export JAVA_HOME=/opt/homebrew/opt/openjdk
+  export PATH=$JAVA_HOME/bin:$PATH
+
 fi 
 
 ################################################################################
