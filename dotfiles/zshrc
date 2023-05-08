@@ -69,6 +69,13 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 export FPATH=~/.local/share/zsh/site-functions:$FPATH
 
 
+# Python tools #################################################################
+
+alias senv="source venv/bin/activate"
+alias denv="deactivate"
+alias cenv="python3 -m venv venv && senv && python -m pip install -U pip"
+
+
 # Golang tools #################################################################
 if [ -d ~/go ]; then
   alias watch=viddy
