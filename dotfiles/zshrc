@@ -70,6 +70,12 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 # Setup further completions
 export FPATH=~/.local/share/zsh/site-functions:$FPATH
 
+# Handy shortcut for logging into multiple hosts in screen panes
+if [[ -n $TMUX_PANE ]]; then
+  (( HP = ${TMUX_PANE/\%/} + 2 ))
+  alias sshdx="ssh s${HP}.home.craigjperry.com"
+fi
+
 
 # Python tools #################################################################
 
@@ -230,7 +236,7 @@ if [[ $OSTYPE == linux* ]]; then
 
   else
 
-    alias uu="sudo dnf upgrade"
+    alias uu="sudo dnf upgrade -y"
 
     # Finalise fzf integration - Fedora
     [[ $- == *i* ]] && source "/usr/share/zsh/site-functions/fzf" 2> /dev/null
