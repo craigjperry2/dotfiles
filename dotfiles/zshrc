@@ -38,6 +38,7 @@ fi
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
+
 # History ######################################################################
 
 HISTFILE=~/.histfile
@@ -56,6 +57,7 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
  
 
 # Shell Behaviours #############################################################
+
 setopt autocd notify
 bindkey -v
 bindkey ^R history-incremental-search-backward
@@ -305,6 +307,8 @@ alias cdc="cd ~/Code"
 alias cdl="cd ~/Code/local"
 alias cdr="cd ~/Code/github.com/craigjperry2"
 alias cdd="cd ~/Code/github.com/craigjperry2/dotfiles/dotfiles"
+
+alias mkdir="mkdir -p"
 
 alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
