@@ -59,9 +59,45 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 # Shell Behaviours #############################################################
 
 setopt autocd notify
+
+# vi mode keybindings
 bindkey -v
+
+# Emacs/readline & vi style history searching
 bindkey ^R history-incremental-search-backward
-export KEYTIMEOUT=15
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
+# Beginning search with arrow keys
+autoload -U up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
+# Years ago i started using ctrl+A / ctrl+x in vi, this is frequently useful
+autoload -U incarg
+zle -N incarg
+bindkey -M viins '^A' incarg
+bindkey -M vicmd '^A' incarg
+decarg() {
+  local incarg=-1
+  incarg
+}
+zle -N decarg
+bindkey -M viins '^X' decarg
+bindkey -M vicmd '^X' decarg
+
+# When v mode isn't enough, edit cmdline in vim
+bindkey -M vicmd "^V" edit-command-line
+
+# Pause 10ms (minimum) before entering cmd mode
+export KEYTIMEOUT=1
+
+# Escape takes wayyyy too long to process in some terminals, ctrl+[ is a chord and i'm a vim user, so...
 bindkey -M viins 'jk' vi-cmd-mode
 
 # Setup fzf integration
@@ -260,7 +296,7 @@ fi
 
 zstyle ":completion:*" rehash true
 zstyle :compinstall filename $HOME/.zshrc
-autoload -Uz compinit
+autoload -Uz compinit 
 compinit
  
 source "$HOME/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme"
