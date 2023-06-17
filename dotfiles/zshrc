@@ -32,6 +32,11 @@ if [[ -d $HOME/go/bin ]]; then
   PATH=$HOME/go/bin:$PATH
 fi
 
+# Zig
+if [ -d $HOME/zig ]; then
+  export PATH=$HOME/zig:$PATH
+fi
+
 if [[ -d $HOME/.dotnet/tools ]]; then
   PATH=$HOME/.dotnet/tools:$PATH
 fi
