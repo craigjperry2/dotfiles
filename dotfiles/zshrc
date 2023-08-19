@@ -228,7 +228,7 @@ if [[ $OSTYPE == darwin* ]]; then
   fi
 
   # Java OpenJDK
-  export JAVA_HOME=/opt/homebrew/opt/openjdk
+  export JAVA_HOME=$( /usr/libexec/java_home )
   export PATH=$JAVA_HOME/bin:$PATH
 
 fi 
