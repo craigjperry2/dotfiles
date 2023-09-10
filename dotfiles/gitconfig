@@ -3,7 +3,7 @@
     email = craigp84@gmail.com
 
 [core]
-    editor = code --wait
+    editor = idea --wait -e
     pager = delta
 
 [interactive]
@@ -18,10 +18,10 @@
 
 [merge]
     conflictstyle = diff3
-	tool = vscode
+    tool = idea
 
 [diff]
-	tool = vscode
+	tool = idea
 
 [color]
     ui = auto
@@ -55,8 +55,15 @@
 [init]
     defaultBranch = main
 
+[difftool "idea"]
+	cmd = idea --wait diff \"$LOCAL\" \"$REMOTE\"
+
 [difftool "vscode"]
 	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
 
 [mergetool "vscode"]
     cmd = code --wait \"$MERGED\"
+
+[mergetool "idea"]
+    cmd = idea --wait merge \"$MERGED\"
+
