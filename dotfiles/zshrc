@@ -319,10 +319,10 @@ if [[ $? -eq 0 ]]; then
   alias cat='bat --pager=never'
 fi
 
-which exa > /dev/null 2>&1 
+which eza > /dev/null 2>&1 
 if [[ $? -eq 0 ]]; then
-  alias l="exa --git --grid --across --icons -l --header"
-  alias ll="exa --git -l --colour=always --tree --level=2 --sort time --icons --header"
+  alias l="eza --git --grid --across --icons -l --header"
+  alias ll="eza --git -l --colour=always --tree --level=2 --sort time --icons --header"
 fi
 
 alias g="git"
