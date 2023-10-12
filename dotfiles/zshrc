@@ -37,6 +37,11 @@ if [ -d $HOME/zig ]; then
   export PATH=$HOME/zig:$PATH
 fi
 
+# Intellij
+if [ -d $HOME/Applications/idea/bin ]; then
+  export PATH=$HOME/Applications/idea/bin:$PATH
+fi
+
 if [[ -d $HOME/.dotnet/tools ]]; then
   PATH=$HOME/.dotnet/tools:$PATH
 fi
