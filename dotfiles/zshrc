@@ -42,6 +42,14 @@ if [ -d $HOME/Applications/idea/bin ]; then
   export PATH=$HOME/Applications/idea/bin:$PATH
 fi
 
+if [ -d $HOME/.bun ]; then
+  # bun completions
+  [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
 if [[ -d $HOME/.dotnet/tools ]]; then
   PATH=$HOME/.dotnet/tools:$PATH
 fi
@@ -366,4 +374,5 @@ alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
 
 alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
+
 
