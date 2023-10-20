@@ -42,6 +42,13 @@ if [ -d $HOME/Applications/idea/bin ]; then
   export PATH=$HOME/Applications/idea/bin:$PATH
 fi
 
+# Spring
+if [ -d $HOME/Applications/spring-3.1.5 ]; then
+  export SPRING_HOME=$HOME/Applications/spring-3.1.5
+  export PATH=$SPRING_HOME/bin:$PATH
+  export FPATH=$SPRING_HOME/shell-completion/zsh:$FPATH
+fi
+
 if [ -d $HOME/.bun ]; then
   # bun completions
   [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
