@@ -382,4 +382,5 @@ alias sc="source $HOME/.zshrc"
 
 alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
 
+# TODO: diskonaut, btm, hyperfine etc.
 
