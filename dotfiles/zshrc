@@ -38,15 +38,8 @@ if [ -d $HOME/zig ]; then
 fi
 
 # Intellij
-if [ -d $HOME/Applications/idea/bin ]; then
-  export PATH=$HOME/Applications/idea/bin:$PATH
-fi
-
-# Spring
-if [ -d $HOME/Applications/spring-3.1.5 ]; then
-  export SPRING_HOME=$HOME/Applications/spring-3.1.5
-  export PATH=$SPRING_HOME/bin:$PATH
-  export FPATH=$SPRING_HOME/shell-completion/zsh:$FPATH
+if [ -d $HOME/Library/Application\ Support/JetBrains/Toolbox/scripts ]; then
+  export PATH=$HOME/Library/Application\ Support/JetBrains/Toolbox/scripts:$PATH
 fi
 
 if [ -d $HOME/.bun ]; then
