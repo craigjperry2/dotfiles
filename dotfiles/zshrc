@@ -278,18 +278,21 @@ if [[ $OSTYPE == linux* ]]; then
 
   alias q="QHOME=~/q rlwrap -r ~/q/l64/q"
 
-  if [[ $WSL_DISTRO_NAME == Ubuntu* ]]; then
+  if [[ -e /etc/debian_version ]]; then
 
     alias uu="sudo apt update && sudo apt upgrade -y"
 
-    # Finalise fzf integration - Ubuntu WSL2
+    # Finalise fzf integration
     [[ $- == *i* ]] && source /usr/share/doc/fzf/examples/completion.zsh 2> /dev/null
     source "/usr/share/doc/fzf/examples/key-bindings.zsh"
 
-    export PATH="/mnt/c/Program Files/Microsoft VS Code/bin:$PATH"
+    if [[ $WSL_DISTRO_NAME == Ubuntu* ]]; then
+      export PATH="/mnt/c/Program Files/Microsoft VS Code/bin:$PATH"
+    fi
 
   else
-
+    # Assume Fedora
+    
     alias uu="sudo dnf upgrade -y"
 
     # Finalise fzf integration - Fedora
