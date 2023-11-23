@@ -1,0 +1,12 @@
+-- Automatically format output based on result length and screen
+\x auto 
+
+-- Prettier nulls
+\pset null '#'
+
+-- Save history based on database name
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- Turn on automatic query timing
+\timing
+
