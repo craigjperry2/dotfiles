@@ -378,5 +378,9 @@ alias sc="source $HOME/.zshrc"
 
 alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
 
-# TODO: diskonaut, btm, hyperfine etc.
+alias ppp="podman pull docker.io/library/postgres"
+alias prp="podman run --name postgres -e POSTGRES_PASSWORD=notsecure -d -p 5432:5432 postgres"
+alias ppsql="podman exec -it postgres psql -U postgres"
+
+alias btm="btm --color default-light"
 
