@@ -16,6 +16,8 @@ fi
 # TODO: this should probably live in zshenv
 PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
+PSQL_PATH=""
+
 if [[ -d /opt/homebrew/bin ]]; then
   PATH=/opt/homebrew/bin:$PATH
 fi
@@ -244,6 +246,8 @@ if [[ $OSTYPE == darwin* ]]; then
   export JAVA_HOME=$( /usr/libexec/java_home )
   export PATH=$JAVA_HOME/bin:$PATH
 
+  PSQL_PATH="/opt/homebrew/opt/postgresql@16/bin/"
+
 fi 
 
 ################################################################################
@@ -381,7 +385,7 @@ alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
 alias ppp="podman pull docker.io/library/postgres"
 alias prp="podman run --name postgres -e POSTGRES_PASSWORD=notsecure -d -p 5432:5432 postgres"
 alias ppsql="podman exec -it postgres psql -U postgres"
-alias psql="env PGPASSWORD=notsecure /opt/homebrew/opt/postgresql@16/bin/psql -U postgres -h localhost"
+alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
 alias pcp="podman cp psqlrc postgres:/root/.psqlrc"
 
 alias btm="btm --color default-light"
