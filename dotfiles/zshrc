@@ -221,6 +221,8 @@ if [[ $OSTYPE == darwin* ]]; then
   alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
+  alias uu="brewup"
+
   # MacOS uses 'open' rather than 'xdg_open'
   export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
 
