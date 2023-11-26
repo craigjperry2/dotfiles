@@ -386,9 +386,10 @@ alias ytd="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
 
 alias ppp="podman pull docker.io/library/postgres"
 alias prp="podman run --name postgres -e POSTGRES_PASSWORD=notsecure -d -p 5432:5432 postgres"
-alias ppsql="podman exec -it postgres psql -U postgres"
-alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
 alias pcp="podman cp $HOME/.psqlrc postgres:/root/.psqlrc"
+alias ppsql="pcp ; podman exec -it postgres psql -U postgres"
+alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
+alias pprm="podman stop postgres ; podman rm postgres"
 
 alias btm="btm --color default-light"
 
