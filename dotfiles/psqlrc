@@ -10,3 +10,6 @@
 -- Turn on automatic query timing
 \timing
 
+\set PROMPT1 '-- %M:%> %n@%/%R%#%x '
+\set PROMPT2 '--> '
+

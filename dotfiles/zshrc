@@ -388,7 +388,7 @@ alias ppp="podman pull docker.io/library/postgres"
 alias prp="podman run --name postgres -e POSTGRES_PASSWORD=notsecure -d -p 5432:5432 postgres"
 alias ppsql="podman exec -it postgres psql -U postgres"
 alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
-alias pcp="podman cp psqlrc postgres:/root/.psqlrc"
+alias pcp="podman cp $HOME/.psqlrc postgres:/root/.psqlrc"
 
 alias btm="btm --color default-light"
 
