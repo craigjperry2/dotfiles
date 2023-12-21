@@ -318,6 +318,7 @@ if [[ $OSTYPE == linux* ]]; then
   if [[ -e /usr/local/bin/k3s ]]; then
     export KUBECONFIG="$HOME/.kube/config"
     [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+    alias k="kubectl"
   fi
 
 fi
