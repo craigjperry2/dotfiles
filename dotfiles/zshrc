@@ -58,6 +58,11 @@ fi
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
+zstyle ":completion:*" rehash true
+zstyle :compinstall filename $HOME/.zshrc
+autoload -Uz compinit 
+compinit
+ 
 
 # History ######################################################################
 
@@ -310,6 +315,11 @@ if [[ $OSTYPE == linux* ]]; then
 
   fi
 
+  if [[ -e /usr/local/bin/k3s ]]; then
+    export KUBECONFIG="$HOME/.kube/config"
+    [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+  fi
+
 fi
 
 ################################################################################
@@ -321,11 +331,6 @@ fi
 # PLATFORM AGNOSTIC CONFIG FINISHING TOUCHES
 ################################################################################
 
-zstyle ":completion:*" rehash true
-zstyle :compinstall filename $HOME/.zshrc
-autoload -Uz compinit 
-compinit
- 
 source "$HOME/Code/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme"
  
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
