@@ -144,6 +144,10 @@ alias senv="source venv/bin/activate"
 alias denv="deactivate"
 alias cenv="python3 -m venv venv && senv && python -m pip install -U pip"
 
+if [ -e ~/.rye/env ]; then
+  source ~/.rye/env
+fi
+
 
 # Golang tools #################################################################
 if [ -d ~/go ]; then
