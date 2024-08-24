@@ -379,7 +379,7 @@ alias vim="nvim"
 export EDITOR="nvim"
 
 alias cdc="cd ~/Code"
-alias cdl="cd ~/Code/local"
+alias cdl="cd ~/Code/github.com/craigjperry2/sandbox"
 alias cdr="cd ~/Code/github.com/craigjperry2"
 alias cdd="cd ~/Code/github.com/craigjperry2/dotfiles/dotfiles"
 
