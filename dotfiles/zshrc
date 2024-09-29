@@ -152,7 +152,7 @@ fi
 # Golang tools #################################################################
 if [ -d ~/go ]; then
   alias watch=viddy
-  alias df=duf
+  #alias df=duf
 fi
 
 viddy () {

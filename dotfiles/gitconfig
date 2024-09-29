@@ -3,25 +3,25 @@
     email = craigp84@gmail.com
 
 [core]
-    editor = idea --wait -e
-    pager = delta
+    editor = code --wait
+#    pager = delta
 
-[interactive]
-    diffFilter = delta --color-only
+# [interactive]
+#     diffFilter = delta --color-only
 
-[delta]
-    navigate = true  # use n and N to move between diff sections
-    line-numbers = true
-    side-by-side = true
-    hyperlinks = true
-    syntax-theme = "Solarized (light)"
+# [delta]
+#     navigate = true  # use n and N to move between diff sections
+#     line-numbers = true
+#     side-by-side = true
+#     hyperlinks = true
+#     syntax-theme = "Solarized (light)"
 
 [merge]
     conflictstyle = diff3
-    tool = idea
+    tool = vscode
 
 [diff]
-	tool = idea
+	tool = vscode
 
 [color]
     ui = auto
