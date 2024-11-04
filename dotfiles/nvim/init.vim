@@ -85,11 +85,13 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 call plug#begin('~/.vim/plugged')
 Plug 'mcchrish/nnn.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 if has("unix")
@@ -116,11 +118,11 @@ nnoremap <leader>- :new<CR>
 nnoremap <leader>\| :vnew<CR>
 
 " Navigate windows
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
-map sd <C-w>q
+" map sh <C-w>h
+" map sk <C-w>k
+" map sj <C-w>j
+" map sl <C-w>l
+" map sd <C-w>q
 
 " Resize windows
 nmap <C-S-left> <C-w><
