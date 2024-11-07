@@ -401,5 +401,5 @@ alias ppsql="pcp ; podman exec -it postgres psql -U postgres"
 alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
 alias pprm="podman stop postgres ; podman rm postgres"
 
-alias btm="btm --color default-light"
+alias btm="btm --theme default-light"
 
