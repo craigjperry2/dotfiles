@@ -1,10 +1,17 @@
 {
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.quickSuggestions": { "strings": "on" },
   "editor.rulers": [80, 120],
   "explorer.confirmDelete": false,
+  "files.associations": { "*.css": "tailwindcss" },
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
   "github.copilot.enable": {
@@ -13,50 +20,38 @@
     "plaintext": false,
     "markdown": true
   },
+  "python.analysis.languageServerMode": "full",
+  "python.analysis.typeCheckingMode": "strict",
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.languageServer": "Pylance",
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "vim.enableNeovim": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<esc>"]
-    }
-  ],
+  // "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<esc>"] }],
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["<C-r>"],
-      "commands": ["redo"]
-    }
-  ],
+  // "vim.normalModeKeyBindingsNonRecursive": [
+  //   { "before": ["u"], "commands": ["undo"] },
+  //   { "before": ["<C-r>"], "commands": ["redo"] }
+  // ],
+  "vim.smartRelativeLine": true,
+  "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": true,
   "vsicons.dontShowNewVersionMessage": true,
   "window.autoDetectColorScheme": true,
   "window.restoreWindows": "none",
-  "workbench.colorTheme": "Solarized Light",
   "workbench.iconTheme": "vscode-icons",
   "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.preferredLightColorTheme": "Solarized Light",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.formatOnType": true
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
   }
 }
+
