@@ -18,10 +18,10 @@
 
 [merge]
     conflictstyle = diff3
-    tool = vscode
+    tool = pycharm
 
 [diff]
-	tool = vscode
+  	tool = pycharm
 
 [color]
     ui = auto
@@ -55,15 +55,15 @@
 [init]
     defaultBranch = main
 
-[difftool "idea"]
-	cmd = idea --wait diff \"$LOCAL\" \"$REMOTE\"
-
 [difftool "vscode"]
-	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+  	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
 
 [mergetool "vscode"]
     cmd = code --wait \"$MERGED\"
 
-[mergetool "idea"]
-    cmd = idea --wait merge \"$MERGED\"
+[difftool "pycharm"]
+  	cmd = pycharm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue..." && read
+
+[mergetool "pycharm"]
+    cmd = pycharm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED" && echo "Press enter to continue..." && read
 
