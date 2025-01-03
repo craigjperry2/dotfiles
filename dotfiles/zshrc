@@ -355,6 +355,7 @@ which eza > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
   alias l="eza --git --grid --across --icons -l --header"
   alias ll="eza --git -l --colour=always --tree --level=2 --sort time --icons --header"
+  export EZA_COLORS="xx=0"
 fi
 
 alias g="git"
@@ -401,5 +402,5 @@ alias ppsql="pcp ; podman exec -it postgres psql -U postgres"
 alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
 alias pprm="podman stop postgres ; podman rm postgres"
 
-alias btm="btm --theme default-light"
+alias btm="btm"
 
