@@ -1,0 +1,76 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-latest"
+    },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking-latest"
+    },
+    "default_profile": "write",
+    "model_parameters": [],
+    "always_allow_tool_actions": true,
+    "version": "2"
+  },
+  "autosave": "on_focus_change",
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "buffer_font_size": 14,
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "tabs": {
+    "show_close_button": "hidden"
+  },
+  "wrap_guides": [80, 120],
+  "terminal": {
+    "font_size": 14,
+    "font_family": "JetBrainsMono Nerd Font Mono"
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Dark",
+    "dark": "One Dark"
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_size": 18,
+  "ui_font_weight": 300
+}

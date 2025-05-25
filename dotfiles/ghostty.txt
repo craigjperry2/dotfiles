@@ -1,0 +1,4 @@
+theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
+font-size = 14
+keybind = global:ctrl+opt+v=toggle_quick_terminal
+
