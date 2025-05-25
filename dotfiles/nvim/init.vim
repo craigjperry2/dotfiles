@@ -40,7 +40,7 @@ set wildignore+=*/node_modules/*
 autocmd InsertLeave * set nopaste
 " Toggle paste mode
 nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+"set pastetoggle=<F2>
 
 " Add asterisks in block comments
 set formatoptions+=r
