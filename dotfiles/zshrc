@@ -406,3 +406,8 @@ alias pprm="podman stop postgres ; podman rm postgres"
 
 alias btm="btm"
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/craig/.lmstudio/bin"
+# End of LM Studio CLI section
+
