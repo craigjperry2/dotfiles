@@ -1,0 +1,15 @@
+{
+  "globalShortcut": "Alt+Space",
+  "mcpServers": {
+    "claude-code": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcp-claude-code",
+        "claudecode",
+        "--allow-path",
+        "/Users/craig/Code/local/project-name"
+      ]
+    }
+  }
+}
