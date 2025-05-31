@@ -1,6 +1,14 @@
 {
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.fontFamily": "JetBrainsMono Nerd Font",
@@ -14,15 +22,21 @@
   "files.associations": { "*.css": "tailwindcss" },
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.template": "${authorName} (${authorDateAgo}) ${subject}",
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": true
+    "yaml": false
   },
+  "lldb.suppressUpdateNotifications": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.formatOnSave.enabled": true,
   "python.analysis.languageServerMode": "full",
   "python.analysis.typeCheckingMode": "strict",
-  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
   "python.languageServer": "Pylance",
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -31,13 +45,10 @@
   "vim.enableNeovim": true,
   // "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<esc>"] }],
   "vim.leader": "<space>",
-  // "vim.normalModeKeyBindingsNonRecursive": [
-  //   { "before": ["u"], "commands": ["undo"] },
-  //   { "before": ["<C-r>"], "commands": ["redo"] }
-  // ],
   "vim.smartRelativeLine": true,
+  "vim.sneak": true,
   "vim.statusBarColorControl": true,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vsicons.dontShowNewVersionMessage": true,
   "window.autoDetectColorScheme": true,
   "window.restoreWindows": "none",
@@ -52,6 +63,6 @@
     "statusBar.debuggingBackground": "#005f87",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
-  }
+  },
 }
 
