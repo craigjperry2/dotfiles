@@ -60,10 +60,10 @@
     defaultBranch = main
 
 [difftool "vscode"]
-  	cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+  	cmd = code --new-window --wait --diff \"$LOCAL\" \"$REMOTE\"
 
 [mergetool "vscode"]
-    cmd = code --wait \"$MERGED\"
+    cmd = code --new-window --wait \"$MERGED\"
 
 #[difftool "pycharm"]
 #  	cmd = pycharm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue..." && read
