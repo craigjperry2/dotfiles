@@ -361,12 +361,12 @@ alias gpl="g pl"
 alias gs="g s"
 alias gw="g w"
 
-# Git clone https://host.com/user/repo.git (or ssh://git@...) into ~/Code/user/repo
+# Git clone encode/httpx
 gc() {
-  repo=$1
-  dest=$( echo $repo | sed -En 's#(.*@|https?://)(www\.)?([^:]*)(:|/)(.*)(.git)?#\3/\5#p' )
-  git clone $repo ~/Code/${dest}
-  cd ~/Code/${dest}
+  local repo=$1
+  cd ~/Code/github.com
+  gh repo clone "$repo" "$repo"
+  cd "$repo"
 }
 
 alias vi="nvim"
