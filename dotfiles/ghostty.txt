@@ -1,6 +1,11 @@
 #theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
 theme = Builtin Solarized Dark
-font-size = 14
+font-size = 16
 keybind = global:ctrl+opt+v=toggle_quick_terminal
+
+# Claude Code 
 keybind = shift+enter=text:\n
+
+# Zellij
+macos-option-as-alt = left
 
