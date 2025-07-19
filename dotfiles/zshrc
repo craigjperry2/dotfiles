@@ -237,15 +237,6 @@ if [[ $OSTYPE == darwin* ]]; then
   [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
   source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
-  # Android Studio & React Native
-  if [ -d $HOME/Library/Android/sdk ]; then
-    export ANDROID_HOME=$HOME/Library/Android/sdk
-    export PATH=$PATH:$ANDROID_HOME/emulator
-    export PATH=$PATH:$ANDROID_HOME/tools
-    export PATH=$PATH:$ANDROID_HOME/tools/bin
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
-  fi
-
   # Java OpenJDK
   export JAVA_HOME=$( /usr/libexec/java_home 2> /dev/null )
   if [[ -n $JAVA_HOME ]]; then
@@ -337,7 +328,6 @@ alias tmr="tmux new-session -ADs main"
 
 which bat > /dev/null 2>&1 
 if [[ $? -eq 0 ]]; then
-  export BAT_THEME="Solarized (light)"
   alias cat='bat --pager=never'
 fi
 
@@ -391,9 +381,6 @@ alias pcp="podman cp $HOME/.psqlrc postgres:/root/.psqlrc"
 alias ppsql="pcp ; podman exec -it postgres psql -U postgres"
 alias psql="env PGPASSWORD=notsecure ${PSQL_PATH}psql -U postgres -h localhost"
 alias pprm="podman stop postgres ; podman rm postgres"
-
-alias btm="btm"
-
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/craig/.lmstudio/bin"

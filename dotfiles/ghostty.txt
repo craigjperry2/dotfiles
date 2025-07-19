@@ -1,4 +1,6 @@
-theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
+#theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
+theme = Builtin Solarized Dark
 font-size = 14
 keybind = global:ctrl+opt+v=toggle_quick_terminal
+keybind = shift+enter=text:\n
 

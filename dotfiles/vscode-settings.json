@@ -34,6 +34,8 @@
     "notebook.source.organizeImports": "explicit"
   },
   "notebook.formatOnSave.enabled": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.languageServerMode": "full",
   "python.analysis.typeCheckingMode": "strict",
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
@@ -50,12 +52,12 @@
   "vim.statusBarColorControl": true,
   "vim.useSystemClipboard": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "window.autoDetectColorScheme": true,
+  "window.autoDetectColorScheme": false,
   "window.restoreWindows": "none",
+  "workbench.colorTheme": "Solarized Dark",
   "workbench.iconTheme": "vscode-icons",
   "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.preferredLightColorTheme": "Solarized Light",
-  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f87",
@@ -63,6 +65,6 @@
     "statusBar.debuggingBackground": "#005f87",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
-  },
+  }
 }
 

@@ -168,7 +168,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
  
 " Theme "{{{
 
-set background=light
+set background=dark
 colorscheme solarized
 
 "}}}
