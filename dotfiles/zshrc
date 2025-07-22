@@ -225,6 +225,9 @@ if [[ $OSTYPE == darwin* ]]; then
 
   alias uu="brewup"
 
+  # Citrix Workspace is annoying
+  alias ckill="ps -ef | awk '/501.*Citrix/{print \$2}' | xargs kill"
+
   # MacOS uses 'open' rather than 'xdg_open'
   export NNN_PLUG='l:_git log*;m:-_less -iR $nnn*;f:_|open $nnn'
 
