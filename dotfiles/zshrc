@@ -248,6 +248,9 @@ if [[ $OSTYPE == darwin* ]]; then
 
   PSQL_PATH="/opt/homebrew/opt/postgresql@16/bin/"
 
+  # Common Lisp 
+  export PATH="$HOME/.qlot/bin:$PATH"
+
 fi 
 
 ################################################################################
