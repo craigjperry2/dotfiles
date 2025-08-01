@@ -249,7 +249,7 @@ if [[ $OSTYPE == darwin* ]]; then
   PSQL_PATH="/opt/homebrew/opt/postgresql@16/bin/"
 
   # Common Lisp 
-  export PATH="$HOME/.qlot/bin:$PATH"
+  export PATH="$HOME/.qlot/bin:$HOME/.config/emacs/bin:$PATH"
   alias lem="$HOME/common-lisp/lem/lem"
 
 fi 
