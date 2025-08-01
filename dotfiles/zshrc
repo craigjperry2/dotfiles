@@ -250,6 +250,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Common Lisp 
   export PATH="$HOME/.qlot/bin:$PATH"
+  alias lem="$HOME/common-lisp/lem/lem"
 
 fi 
 
