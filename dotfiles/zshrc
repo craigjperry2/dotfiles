@@ -351,11 +351,13 @@ alias gac="g ac"
 alias gb="g b"
 alias gcm="g cm"
 alias gd="g d"
+alias gdt="g dt"
 alias gds="g ds"
+alias gdst="g dst"
 alias gl="g l"
 alias gps="g ps"
 alias gpl="g pl"
-alias gs="g s"
+alias gs="lazygit"  # was git status for the longest time, hence gs
 alias gw="g w"
 
 # Git clone encode/httpx
