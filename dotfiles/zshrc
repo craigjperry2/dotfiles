@@ -221,9 +221,12 @@ if [[ $OSTYPE == darwin* ]]; then
 
   # Homebrew package manager for Intel and M1
   alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  alias uu="brewup ; npm list -g ; npm upgrade -g ; npm list -g ; uv tool list ; uv tool upgrade --all ; uv tool list ; rustup upgrade"
+  alias uu="brewup ; \
+    npm list -g ; npm upgrade -g ; npm list -g ; \
+    uv tool list ; uv tool upgrade --all ; uv tool list ; \
+    rustup upgrade"
 
   # Citrix Workspace is annoying
   alias ckill="ps -ef | awk '/501.*Citrix/{print \$2}' | xargs kill"
@@ -354,7 +357,8 @@ alias gd="g d"
 alias gdt="g dt"
 alias gds="g ds"
 alias gdst="g dst"
-alias gl="g l"
+alias gl="g show"  # was git log --oneline
+alias gll="g l"
 alias gps="g ps"
 alias gpl="g pl"
 alias gs="lazygit"  # was git status for the longest time, hence gs
