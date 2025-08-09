@@ -14,7 +14,7 @@
     line-numbers = true
     side-by-side = true
     hyperlinks = true
-    syntax-theme = "Solarized (dark)"
+    syntax-theme = "Solarized (light)"
 
 [merge]
     conflictstyle = zdiff3
