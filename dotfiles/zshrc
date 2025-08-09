@@ -363,7 +363,7 @@ alias gll="g l"
 alias gps="g ps"
 alias gpl="g pl"
 alias gs="lazygit"  # was git status for the longest time, hence gs
-alias gss="g s"
+alias gss="g status"
 alias gw="g w"
 
 # Git clone encode/httpx
