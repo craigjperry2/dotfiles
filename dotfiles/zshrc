@@ -223,7 +223,7 @@ if [[ $OSTYPE == darwin* ]]; then
   alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  alias uu="brewup"
+  alias uu="brewup ; npm list -g ; npm upgrade -g ; npm list -g ; uv tool list ; uv tool upgrade --all ; uv tool list ; rustup upgrade"
 
   # Citrix Workspace is annoying
   alias ckill="ps -ef | awk '/501.*Citrix/{print \$2}' | xargs kill"
