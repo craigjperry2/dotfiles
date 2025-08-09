@@ -338,6 +338,7 @@ alias tmr="tmux new-session -ADs main"
 
 which bat > /dev/null 2>&1 
 if [[ $? -eq 0 ]]; then
+  export BAT_THEME="Solarized (light)"
   alias cat='bat --pager=never'
 fi
 
@@ -362,6 +363,7 @@ alias gll="g l"
 alias gps="g ps"
 alias gpl="g pl"
 alias gs="lazygit"  # was git status for the longest time, hence gs
+alias gss="g s"
 alias gw="g w"
 
 # Git clone encode/httpx
