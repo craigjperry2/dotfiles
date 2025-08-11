@@ -225,7 +225,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
   alias uu="brewup ; \
     npm list -g ; npm upgrade -g ; npm list -g ; \
-    uv tool list ; uv tool upgrade --all ; uv tool list ; \
+    uv tool upgrade --all ; \
     rustup upgrade"
 
   # Citrix Workspace is annoying
